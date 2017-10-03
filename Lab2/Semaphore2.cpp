@@ -16,7 +16,7 @@
 void Semaphore2::count(std::string msg, int id)
  {
  	 m_lock.lock();
- 	 std::cout <<  msg  << " : " <<  id  << " m_sharedInt" <<m_sharedInt << std::endl;
+ 	 std::cout <<  msg  << " Shared value is : " << m_sharedInt << std::endl;
  	 m_sharedInt++;
  	 m_lock.unlock();
  }

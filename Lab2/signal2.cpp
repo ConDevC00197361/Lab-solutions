@@ -23,15 +23,13 @@
  * \param theSemaphore is in the parameter list type of thread
  * \details This function called by the first thread 
  */
-void taskOne(std::shared_ptr<Semaphore2> theSemaphore)
+void taskOne(std::shared_ptr<Semaphore2> theSemaphore, int count)
 {
-
+ std::string msg = "thread " + std::to_string(count);
   for (int i = 0; i < 10; i++)
   {
-     theSemaphore->count("thread One", i);
+     theSemaphore->count(msg  , i);
   }
-  //theSemaphore->Signal();
-  
 }
 
 
@@ -40,14 +38,13 @@ void taskOne(std::shared_ptr<Semaphore2> theSemaphore)
  * \param theSemaphore is in the parameter list type of thread
  * \details This function called by the second thread
  */
-void taskTwo(std::shared_ptr<Semaphore2> theSemaphore)
+void taskTwo(std::shared_ptr<Semaphore2> theSemaphore, int count)
 {
+   std::string msg = "thread " + std::to_string(count);
   for (int i = 0; i < 10; i++)
   {
-     theSemaphore->count("thread Two", i);
+     theSemaphore->count(msg, i);
   }
-  //theSemaphore->Signal();
-   
 }
 
 void printInt(std::shared_ptr<Semaphore2> theSemaphore)
@@ -63,15 +60,15 @@ void printInt(std::shared_ptr<Semaphore2> theSemaphore)
  * \details Main function creates two threads and call the taskOne & taskTwo functions 
  */
 int main(void){
-  
+
   std::thread threadOne, threadTwo, threadThree, threadFour, threadFive;
 
    std::shared_ptr<Semaphore2> sem( new Semaphore2);
  
-  threadTwo=std::thread(taskOne,sem);
-  threadOne=std::thread(taskTwo,sem);
-  threadFour=std::thread(taskOne,sem);
-  threadFive=std::thread(taskTwo,sem);
+   threadTwo=std::thread(taskOne,sem,1);
+   threadOne=std::thread(taskTwo,sem,2);
+   threadFour=std::thread(taskOne,sem,3);
+   threadFive=std::thread(taskTwo,sem,4);
   
   
   threadOne.join();
