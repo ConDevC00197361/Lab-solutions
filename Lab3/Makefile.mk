@@ -19,3 +19,9 @@ all:$(PROGRAM)
 $(PROGRAM):$(CFILES) $(HFILES)
 	$(CC) $(CFLAGS) *.cpp -o $(EXE)
 	$(DOXYGEN) Doxyfile
+
+debug:
+	g++ -g signal.cpp -o signal
+
+clean:
+	rm *.o
