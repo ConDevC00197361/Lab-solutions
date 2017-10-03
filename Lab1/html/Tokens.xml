@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+  <Token>
+    <TokenIdentifier>
+      <Name>taskOne</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>signal_8cpp.html</Path>
+    <Anchor>a2696073bbedb6b55e6a52d2180c2a9b3</Anchor>
+    <Abstract>Description of the void taskOne function. </Abstract>
+    <DeclaredIn>signal.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>taskTwo</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>signal_8cpp.html</Path>
+    <Anchor>ae4ea9570be601d182fa473c7ca431852</Anchor>
+    <Abstract>Description of the void taskTwo function. </Abstract>
+    <DeclaredIn>signal.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>main</Name>
+      <APILanguage>c</APILanguage>
+      <Type>func</Type>
+    </TokenIdentifier>
+    <Path>signal_8cpp.html</Path>
+    <Anchor>a840291bc02cba5474a4cb46a9b9566fe</Anchor>
+    <Abstract>Description of the main function. </Abstract>
+    <DeclaredIn>signal.cpp</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Semaphore</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>Semaphore</Scope>
+    </TokenIdentifier>
+    <Path>classSemaphore.html</Path>
+    <Abstract>Semaphore.h declaration. </Abstract>
+    <DeclaredIn>Semaphore.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Semaphore</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>Semaphore</Scope>
+    </TokenIdentifier>
+    <Path>classSemaphore.html</Path>
+    <Anchor>a0d9290d316636875ca85d1d78950a817</Anchor>
+    <Abstract>Constructor &amp; Deconstructor. </Abstract>
+    <DeclaredIn>Semaphore.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Wait</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>Semaphore</Scope>
+    </TokenIdentifier>
+    <Path>classSemaphore.html</Path>
+    <Anchor>a72aabebf026e3a8b1f3e4d0fa8ee1eda</Anchor>
+    <Abstract>Description of the void Wait function. </Abstract>
+    <DeclaredIn>Semaphore.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Signal</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>Semaphore</Scope>
+    </TokenIdentifier>
+    <Path>classSemaphore.html</Path>
+    <Anchor>a86f92f738b4486439b296d8e235895f2</Anchor>
+    <Abstract>Description of the void Signal function. </Abstract>
+    <DeclaredIn>Semaphore.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Semaphore::cpp</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>Semaphore::cpp</Scope>
+    </TokenIdentifier>
+    <Path>classSemaphore_1_1cpp.html</Path>
+    <Abstract>A Semaphore Implementation. </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Semaphore::h</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>Semaphore::h</Scope>
+    </TokenIdentifier>
+    <Path>classSemaphore_1_1h.html</Path>
+    <Abstract>Semaphore declaration. </Abstract>
+    <DeclaredIn>Semaphore.h</DeclaredIn>
+  </Token>
+</Tokens>
