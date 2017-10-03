@@ -20,3 +20,6 @@ all:$(PROGRAM)
 $(PROGRAM):$(CFILES) $(HFILES)
 	$(CC) $(CFLAGS) *.cpp -o $(EXE)
 	$(DOXYGEN) Doxyfile
+
+clean:
+	rm *.o
