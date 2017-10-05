@@ -9,6 +9,7 @@
 #include <mutex>
 #include <condition_variable>
 #include <chrono>
+#include <iostream> 
 /*!
  * \brief Semaphore.h declaration
  * \param m_mutex Mutual exclusion Mutex lock
@@ -21,17 +22,18 @@ class Semaphore
 private:
     unsigned int m_uiCount; 
     std::mutex m_mutex;
+    std::mutex m_lock;
     std::condition_variable m_condition;
+    int m_sharedInt;
 
 public:
     /*!
      * \brief Constructor & Deconstructor
      */
-    Semaphore(unsigned int uiCount=0)
-      : m_uiCount(uiCount) { };
+    Semaphore(unsigned int uiCount=-2, int m_sharedInt=0) : m_uiCount(uiCount) { };
+    void count(std::string msg, int id);
     void Wait();
-    template< typename R,typename P >
-      bool Wait(const std::chrono::duration<R,P>& crRelTime);
     void Signal();
+    int getSharedInt();
 
 };

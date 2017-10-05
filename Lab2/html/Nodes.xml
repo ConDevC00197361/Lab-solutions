@@ -18,22 +18,6 @@
         </Subnodes>
        </Node>
        <Node>
-        <Name>Namespaces</Name>
-        <Path></Path>
-        <Subnodes>
-         <Node>
-          <Name>Namespace List</Name>
-          <Path>namespaces.html</Path>
-          <Subnodes>
-           <Node>
-            <Name>Semaphore</Name>
-            <Path>namespaceSemaphore.html</Path>
-           </Node>
-          </Subnodes>
-         </Node>
-        </Subnodes>
-       </Node>
-       <Node>
         <Name>Classes</Name>
         <Path>annotated.html</Path>
         <Subnodes>
@@ -43,7 +27,7 @@
           <Subnodes>
            <Node>
             <Name>Semaphore</Name>
-            <Path>namespaceSemaphore.html</Path>
+            <Path>classSemaphore.html</Path>
             <Subnodes>
              <Node>
               <Name>cpp</Name>
@@ -53,36 +37,30 @@
               <Name>h</Name>
               <Path>classSemaphore_1_1h.html</Path>
              </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>Semaphore2</Name>
-            <Path>classSemaphore2.html</Path>
-            <Subnodes>
              <Node>
-              <Name>Semaphore2</Name>
-              <Path>classSemaphore2.html</Path>
-              <Anchor>a3c02b7fcd6e1113a37e5d6029e56e103</Anchor>
+              <Name>Semaphore</Name>
+              <Path>classSemaphore.html</Path>
+              <Anchor>af78079e4a7c0830215e63766d1002b7c</Anchor>
              </Node>
              <Node>
-              <Name>count</Name>
-              <Path>classSemaphore2.html</Path>
-              <Anchor>a4d7bcc1d43ee368fed6acbd41572c609</Anchor>
+              <Name>aSignal</Name>
+              <Path>classSemaphore.html</Path>
+              <Anchor>ad2f2c978eed8783f7cf23925f2238d04</Anchor>
              </Node>
              <Node>
-              <Name>getSharedInt</Name>
-              <Path>classSemaphore2.html</Path>
-              <Anchor>ae231a754ceb48acfe92e2941f0ae5acc</Anchor>
+              <Name>aWait</Name>
+              <Path>classSemaphore.html</Path>
+              <Anchor>a8b79dd4164e3d18520fdea2e2e7298b4</Anchor>
              </Node>
              <Node>
-              <Name>Signal</Name>
-              <Path>classSemaphore2.html</Path>
-              <Anchor>a880e6d9ab8655d858258ac73fd99bf34</Anchor>
+              <Name>bSignal</Name>
+              <Path>classSemaphore.html</Path>
+              <Anchor>a4cfbaff2ba1b15ba6ff2f9a74eb2efcc</Anchor>
              </Node>
              <Node>
-              <Name>Wait</Name>
-              <Path>classSemaphore2.html</Path>
-              <Anchor>a6e355ef79fc1964922206b6a4bb2eda3</Anchor>
+              <Name>bWait</Name>
+              <Path>classSemaphore.html</Path>
+              <Anchor>ad75a2422aa38911edb90f1364a03a761</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -121,69 +99,72 @@
             <Path>Makefile_8mk.html</Path>
            </Node>
            <Node>
-            <Name>Semaphore2.cpp</Name>
-            <Path>Semaphore2_8cpp.html</Path>
+            <Name>Semaphore.cpp</Name>
+            <Path>Semaphore_8cpp.html</Path>
            </Node>
            <Node>
-            <Name>Semaphore2.h</Name>
-            <Path>Semaphore2_8h.html</Path>
+            <Name>Semaphore.h</Name>
+            <Path>Semaphore_8h.html</Path>
             <Subnodes>
              <Node>
-              <Name>Semaphore2</Name>
-              <Path>classSemaphore2.html</Path>
+              <Name>Semaphore</Name>
+              <Path>classSemaphore.html</Path>
               <Subnodes>
                <Node>
-                <Name>Semaphore2</Name>
-                <Path>classSemaphore2.html</Path>
-                <Anchor>a3c02b7fcd6e1113a37e5d6029e56e103</Anchor>
+                <Name>cpp</Name>
+                <Path>classSemaphore_1_1cpp.html</Path>
                </Node>
                <Node>
-                <Name>count</Name>
-                <Path>classSemaphore2.html</Path>
-                <Anchor>a4d7bcc1d43ee368fed6acbd41572c609</Anchor>
+                <Name>h</Name>
+                <Path>classSemaphore_1_1h.html</Path>
                </Node>
                <Node>
-                <Name>getSharedInt</Name>
-                <Path>classSemaphore2.html</Path>
-                <Anchor>ae231a754ceb48acfe92e2941f0ae5acc</Anchor>
+                <Name>Semaphore</Name>
+                <Path>classSemaphore.html</Path>
+                <Anchor>af78079e4a7c0830215e63766d1002b7c</Anchor>
                </Node>
                <Node>
-                <Name>Signal</Name>
-                <Path>classSemaphore2.html</Path>
-                <Anchor>a880e6d9ab8655d858258ac73fd99bf34</Anchor>
+                <Name>aSignal</Name>
+                <Path>classSemaphore.html</Path>
+                <Anchor>ad2f2c978eed8783f7cf23925f2238d04</Anchor>
                </Node>
                <Node>
-                <Name>Wait</Name>
-                <Path>classSemaphore2.html</Path>
-                <Anchor>a6e355ef79fc1964922206b6a4bb2eda3</Anchor>
+                <Name>aWait</Name>
+                <Path>classSemaphore.html</Path>
+                <Anchor>a8b79dd4164e3d18520fdea2e2e7298b4</Anchor>
+               </Node>
+               <Node>
+                <Name>bSignal</Name>
+                <Path>classSemaphore.html</Path>
+                <Anchor>a4cfbaff2ba1b15ba6ff2f9a74eb2efcc</Anchor>
+               </Node>
+               <Node>
+                <Name>bWait</Name>
+                <Path>classSemaphore.html</Path>
+                <Anchor>ad75a2422aa38911edb90f1364a03a761</Anchor>
                </Node>
               </Subnodes>
              </Node>
             </Subnodes>
            </Node>
            <Node>
-            <Name>signal2.cpp</Name>
-            <Path>signal2_8cpp.html</Path>
+            <Name>signal.cpp</Name>
+            <Path>signal_8cpp.html</Path>
             <Subnodes>
              <Node>
               <Name>main</Name>
-              <Path>signal2_8cpp.html</Path>
+              <Path>signal_8cpp.html</Path>
               <Anchor>a840291bc02cba5474a4cb46a9b9566fe</Anchor>
              </Node>
              <Node>
-              <Name>printInt</Name>
-              <Path>signal2_8cpp.html</Path>
-              <Anchor>afde94c92282144b7b8d0c76a87a32d68</Anchor>
+              <Name>randezvousA</Name>
+              <Path>signal_8cpp.html</Path>
+              <Anchor>a4b9c3410b196eb1f2caf69058f67bffd</Anchor>
              </Node>
              <Node>
-              <Name>taskOne</Name>
-              <Path>signal2_8cpp.html</Path>
-              <Anchor>a154c71e286e770e834e13c34dd925e1e</Anchor>
-             </Node>
-             <Node>
-              <Name>taskTwo</Name>
-              <Path>signal2_8cpp.html</Path>
-              <Anchor>a99750d197125a53837e0f15e1c493a52</Anchor>
+              <Name>randezvousB</Name>
+              <Path>signal_8cpp.html</Path>
+              <Anchor>af33ff87ff07a43984899fbd92c7c8557</Anchor>
              </Node>
             </Subnodes>
            </Node>

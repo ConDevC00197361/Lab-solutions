@@ -6,20 +6,22 @@
       <Path>index.html</Path>
       <Subnodes>
        <Node>
-        <Name>Software Engineering</Name>
+        <Name>Lab 2</Name>
         <Path>index.html</Path>
-        <Anchor>name_sec</Anchor>
         <Subnodes>
          <Node>
-          <Name>Use Makefile to compile Lab 1</Name>
+          <Name>Software Engineering</Name>
           <Path>index.html</Path>
-          <Anchor>info_sec</Anchor>
+          <Anchor>name_sec</Anchor>
+          <Subnodes>
+           <Node>
+            <Name>Lab 3 - Description</Name>
+            <Path>index.html</Path>
+            <Anchor>info_sec</Anchor>
+           </Node>
+          </Subnodes>
          </Node>
         </Subnodes>
-       </Node>
-       <Node>
-        <Name>Bug List</Name>
-        <Path>bug.html</Path>
        </Node>
        <Node>
         <Name>Classes</Name>
@@ -44,7 +46,17 @@
              <Node>
               <Name>Semaphore</Name>
               <Path>classSemaphore.html</Path>
-              <Anchor>a0d9290d316636875ca85d1d78950a817</Anchor>
+              <Anchor>a46ef15876eca6fb68675f0bed0b36a0b</Anchor>
+             </Node>
+             <Node>
+              <Name>count</Name>
+              <Path>classSemaphore.html</Path>
+              <Anchor>ab4457643a5629d214cd87224706406e7</Anchor>
+             </Node>
+             <Node>
+              <Name>getSharedInt</Name>
+              <Path>classSemaphore.html</Path>
+              <Anchor>a0ac15ad31bb88a39655af789234b203d</Anchor>
              </Node>
              <Node>
               <Name>Signal</Name>
@@ -55,11 +67,6 @@
               <Name>Wait</Name>
               <Path>classSemaphore.html</Path>
               <Anchor>a72aabebf026e3a8b1f3e4d0fa8ee1eda</Anchor>
-             </Node>
-             <Node>
-              <Name>Wait</Name>
-              <Path>classSemaphore.html</Path>
-              <Anchor>a7f700173ae86ae623684109066e07656</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -120,7 +127,17 @@
                <Node>
                 <Name>Semaphore</Name>
                 <Path>classSemaphore.html</Path>
-                <Anchor>a0d9290d316636875ca85d1d78950a817</Anchor>
+                <Anchor>a46ef15876eca6fb68675f0bed0b36a0b</Anchor>
+               </Node>
+               <Node>
+                <Name>count</Name>
+                <Path>classSemaphore.html</Path>
+                <Anchor>ab4457643a5629d214cd87224706406e7</Anchor>
+               </Node>
+               <Node>
+                <Name>getSharedInt</Name>
+                <Path>classSemaphore.html</Path>
+                <Anchor>a0ac15ad31bb88a39655af789234b203d</Anchor>
                </Node>
                <Node>
                 <Name>Signal</Name>
@@ -131,11 +148,6 @@
                 <Name>Wait</Name>
                 <Path>classSemaphore.html</Path>
                 <Anchor>a72aabebf026e3a8b1f3e4d0fa8ee1eda</Anchor>
-               </Node>
-               <Node>
-                <Name>Wait</Name>
-                <Path>classSemaphore.html</Path>
-                <Anchor>a7f700173ae86ae623684109066e07656</Anchor>
                </Node>
               </Subnodes>
              </Node>
@@ -151,14 +163,19 @@
               <Anchor>a840291bc02cba5474a4cb46a9b9566fe</Anchor>
              </Node>
              <Node>
-              <Name>taskOne</Name>
+              <Name>mutexOne</Name>
               <Path>signal_8cpp.html</Path>
-              <Anchor>a2696073bbedb6b55e6a52d2180c2a9b3</Anchor>
+              <Anchor>a38c69063507bcb7d1ab616b62112ef6a</Anchor>
              </Node>
              <Node>
-              <Name>taskTwo</Name>
+              <Name>mutexTwo</Name>
               <Path>signal_8cpp.html</Path>
-              <Anchor>ae4ea9570be601d182fa473c7ca431852</Anchor>
+              <Anchor>acfa6006ceb76c887ca93dbda9c2080a1</Anchor>
+             </Node>
+             <Node>
+              <Name>printSharedVariable</Name>
+              <Path>signal_8cpp.html</Path>
+              <Anchor>ae6f52339dc5d2f965203e1e822d7a8dc</Anchor>
              </Node>
             </Subnodes>
            </Node>

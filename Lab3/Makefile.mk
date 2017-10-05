@@ -1,8 +1,8 @@
 ### Makefile.mk Documentation
-EXE = signal
+EXE = mutex
 CC = g++
 DOXYGEN = doxygen
-PROGRAM = Signal
+PROGRAM = Mutex
 CFLAGS =-std=c++11 -pthread -o$(EXE)
 CFILES = signal.cpp Semaphore.cpp
 HFILES = Semaphore.h
@@ -21,7 +21,7 @@ $(PROGRAM):$(CFILES) $(HFILES)
 	$(DOXYGEN) Doxyfile
 
 debug:
-	g++ -g signal.cpp -o signal
+	g++ -g signal.cpp -o signalDebug
 
 clean:
 	rm *.o

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['bug_20list',['Bug List',['../bug.html',1,'']]]
+  ['count',['count',['../classSemaphore.html#ab4457643a5629d214cd87224706406e7',1,'Semaphore']]],
+  ['cpp',['cpp',['../classSemaphore_1_1cpp.html',1,'Semaphore']]]
 ];

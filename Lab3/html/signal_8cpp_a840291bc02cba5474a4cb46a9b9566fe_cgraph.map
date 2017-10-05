@@ -1,4 +1,5 @@
 <map id="main" name="main">
-<area shape="rect" id="node2" href="$signal_8cpp.html#a2696073bbedb6b55e6a52d2180c2a9b3" title="Description of the void taskOne function. " alt="" coords="105,5,175,32"/>
-<area shape="rect" id="node3" href="$signal_8cpp.html#ae4ea9570be601d182fa473c7ca431852" title="Description of the void taskTwo function. " alt="" coords="104,56,176,83"/>
+<area shape="rect" id="node2" href="$signal_8cpp.html#a38c69063507bcb7d1ab616b62112ef6a" title="Description of the void mutexOne function. " alt="" coords="130,5,213,32"/>
+<area shape="rect" id="node3" href="$signal_8cpp.html#acfa6006ceb76c887ca93dbda9c2080a1" title="Description of the void mutexTwo function. " alt="" coords="130,56,213,83"/>
+<area shape="rect" id="node4" href="$signal_8cpp.html#ae6f52339dc5d2f965203e1e822d7a8dc" title="Description of the void printSharedVariable function. " alt="" coords="104,107,239,133"/>
 </map>

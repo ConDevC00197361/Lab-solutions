@@ -2,35 +2,25 @@
 <Tokens version="1.0">
   <Token>
     <TokenIdentifier>
-      <Name>taskOne</Name>
+      <Name>randezvousA</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>signal2_8cpp.html</Path>
-    <Anchor>a154c71e286e770e834e13c34dd925e1e</Anchor>
-    <Abstract>Description of the void taskOne function. </Abstract>
-    <DeclaredIn>signal2.cpp</DeclaredIn>
+    <Path>signal_8cpp.html</Path>
+    <Anchor>a4b9c3410b196eb1f2caf69058f67bffd</Anchor>
+    <Abstract>Description of the void randezvousA function. </Abstract>
+    <DeclaredIn>signal.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>taskTwo</Name>
+      <Name>randezvousB</Name>
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>signal2_8cpp.html</Path>
-    <Anchor>a99750d197125a53837e0f15e1c493a52</Anchor>
-    <Abstract>Description of the void taskTwo function. </Abstract>
-    <DeclaredIn>signal2.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>printInt</Name>
-      <APILanguage>c</APILanguage>
-      <Type>func</Type>
-    </TokenIdentifier>
-    <Path>signal2_8cpp.html</Path>
-    <Anchor>afde94c92282144b7b8d0c76a87a32d68</Anchor>
-    <DeclaredIn>signal2.cpp</DeclaredIn>
+    <Path>signal_8cpp.html</Path>
+    <Anchor>af33ff87ff07a43984899fbd92c7c8557</Anchor>
+    <Abstract>Description of the void randezvousB function. </Abstract>
+    <DeclaredIn>signal.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -38,89 +28,81 @@
       <APILanguage>c</APILanguage>
       <Type>func</Type>
     </TokenIdentifier>
-    <Path>signal2_8cpp.html</Path>
+    <Path>signal_8cpp.html</Path>
     <Anchor>a840291bc02cba5474a4cb46a9b9566fe</Anchor>
     <Abstract>Description of the main function. </Abstract>
-    <DeclaredIn>signal2.cpp</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>Semaphore2</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>Semaphore2</Scope>
-    </TokenIdentifier>
-    <Path>classSemaphore2.html</Path>
-    <Abstract>Semaphore.h declaration. </Abstract>
-    <DeclaredIn>Semaphore2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>Semaphore2</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>Semaphore2</Scope>
-    </TokenIdentifier>
-    <Path>classSemaphore2.html</Path>
-    <Anchor>a3c02b7fcd6e1113a37e5d6029e56e103</Anchor>
-    <Abstract>Constructor &amp; Deconstructor. </Abstract>
-    <DeclaredIn>Semaphore2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>count</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>Semaphore2</Scope>
-    </TokenIdentifier>
-    <Path>classSemaphore2.html</Path>
-    <Anchor>a4d7bcc1d43ee368fed6acbd41572c609</Anchor>
-    <Abstract>Description of the Shared Method. </Abstract>
-    <DeclaredIn>Semaphore2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>Wait</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>Semaphore2</Scope>
-    </TokenIdentifier>
-    <Path>classSemaphore2.html</Path>
-    <Anchor>a6e355ef79fc1964922206b6a4bb2eda3</Anchor>
-    <Abstract>Description of the void Wait function. </Abstract>
-    <DeclaredIn>Semaphore2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>Signal</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>Semaphore2</Scope>
-    </TokenIdentifier>
-    <Path>classSemaphore2.html</Path>
-    <Anchor>a880e6d9ab8655d858258ac73fd99bf34</Anchor>
-    <Abstract>Description of the void Signal function. </Abstract>
-    <DeclaredIn>Semaphore2.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>getSharedInt</Name>
-      <APILanguage>cpp</APILanguage>
-      <Type>instm</Type>
-      <Scope>Semaphore2</Scope>
-    </TokenIdentifier>
-    <Path>classSemaphore2.html</Path>
-    <Anchor>ae231a754ceb48acfe92e2941f0ae5acc</Anchor>
-    <DeclaredIn>Semaphore2.h</DeclaredIn>
+    <DeclaredIn>signal.cpp</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>Semaphore</Name>
       <APILanguage>c</APILanguage>
-      <Type>ns</Type>
+      <Type>cl</Type>
       <Scope>Semaphore</Scope>
     </TokenIdentifier>
-    <Path>namespaceSemaphore.html</Path>
+    <Path>classSemaphore.html</Path>
+    <Abstract>Semaphore.h declaration. </Abstract>
+    <DeclaredIn>Semaphore.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Semaphore</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>Semaphore</Scope>
+    </TokenIdentifier>
+    <Path>classSemaphore.html</Path>
+    <Anchor>af78079e4a7c0830215e63766d1002b7c</Anchor>
+    <Abstract>Constructor &amp; Deconstructor. </Abstract>
+    <DeclaredIn>Semaphore.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>aWait</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>Semaphore</Scope>
+    </TokenIdentifier>
+    <Path>classSemaphore.html</Path>
+    <Anchor>a8b79dd4164e3d18520fdea2e2e7298b4</Anchor>
+    <Abstract>Description of the void aWait function. </Abstract>
+    <DeclaredIn>Semaphore.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>aSignal</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>Semaphore</Scope>
+    </TokenIdentifier>
+    <Path>classSemaphore.html</Path>
+    <Anchor>ad2f2c978eed8783f7cf23925f2238d04</Anchor>
+    <Abstract>Description of the void aSignal function. </Abstract>
+    <DeclaredIn>Semaphore.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>bWait</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>Semaphore</Scope>
+    </TokenIdentifier>
+    <Path>classSemaphore.html</Path>
+    <Anchor>ad75a2422aa38911edb90f1364a03a761</Anchor>
+    <Abstract>Description of the void bWait function. </Abstract>
+    <DeclaredIn>Semaphore.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>bSignal</Name>
+      <APILanguage>cpp</APILanguage>
+      <Type>instm</Type>
+      <Scope>Semaphore</Scope>
+    </TokenIdentifier>
+    <Path>classSemaphore.html</Path>
+    <Anchor>a4cfbaff2ba1b15ba6ff2f9a74eb2efcc</Anchor>
+    <Abstract>Description of the void Signal function. </Abstract>
+    <DeclaredIn>Semaphore.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -141,6 +123,6 @@
     </TokenIdentifier>
     <Path>classSemaphore_1_1h.html</Path>
     <Abstract>Semaphore declaration. </Abstract>
-    <DeclaredIn>Semaphore2.h</DeclaredIn>
+    <DeclaredIn>Semaphore.h</DeclaredIn>
   </Token>
 </Tokens>
