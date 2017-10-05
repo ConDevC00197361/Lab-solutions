@@ -1,6 +1,6 @@
 ### Makefile.mk Documentation
 EXE = mutex
-CC = g++
+CC = g++ -g
 DOXYGEN = doxygen
 PROGRAM = Mutex
 CFLAGS =-std=c++11 -pthread -o$(EXE)
@@ -20,8 +20,8 @@ $(PROGRAM):$(CFILES) $(HFILES)
 	$(CC) $(CFLAGS) *.cpp -o $(EXE)
 	$(DOXYGEN) Doxyfile
 
-debug:
-	g++ -g signal.cpp -o signalDebug
+#debug:
+#	g++ -g signal.cpp -o mutexDebug
 
-clean:
-	rm *.o
+#clean:
+#	rm *.o
