@@ -31,6 +31,7 @@ private:
 public:
     /*!
      * \brief Constructor & Deconstructor
+     * The constructor initialise the two member variable (m_uiCountA & m_uiCountB)to Zero;
      */
     Semaphore(unsigned int uiCountA=0, unsigned int uiCountB=0 ) : m_uiCountA(uiCountA), m_uiCountB(uiCountB) { };
     void aWait();

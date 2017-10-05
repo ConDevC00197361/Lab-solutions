@@ -9,7 +9,7 @@
 /*!
  * \brief Description of the void Wait function
  * \param m_uiCount Counter to the lock
- * \details Decrease the m_uiCount if more than Zero
+ * \details Decrease the m_uiCount 
  */
 void Semaphore::Wait(){
 
@@ -25,7 +25,7 @@ void Semaphore::Wait(){
 /*!
  * \brief Description of the void Signal function
  * \param m_uiCount Counter to the lock
- * \details Increase the m_uiCount if more than Zero
+ * \details Increase the m_uiCount 
  */
 void Semaphore::Signal()
 {

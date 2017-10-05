@@ -63,7 +63,7 @@
       <Scope>Semaphore</Scope>
     </TokenIdentifier>
     <Path>classSemaphore.html</Path>
-    <Anchor>a46ef15876eca6fb68675f0bed0b36a0b</Anchor>
+    <Anchor>ada56b5bc6b047d3592c601220b6ff24c</Anchor>
     <Abstract>Constructor &amp; Deconstructor. </Abstract>
     <DeclaredIn>Semaphore.h</DeclaredIn>
   </Token>

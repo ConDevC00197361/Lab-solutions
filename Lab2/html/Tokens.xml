@@ -53,7 +53,7 @@
     </TokenIdentifier>
     <Path>classSemaphore.html</Path>
     <Anchor>af78079e4a7c0830215e63766d1002b7c</Anchor>
-    <Abstract>Constructor &amp; Deconstructor. </Abstract>
+    <Abstract>Constructor &amp; Deconstructor The constructor initialise the two member variable (m_uiCountA &amp; m_uiCoun...</Abstract>
     <DeclaredIn>Semaphore.h</DeclaredIn>
   </Token>
   <Token>

@@ -5,7 +5,7 @@
  *
  * \copyright GNU Public License
  *
- * \mainpage Lab 2
+ * \mainpage Lab 3
  * \section name_sec Software Engineering
  * Lab 3, ConDev - Joseph Kehoe
  * \subsection info_sec Lab 3 - Description
@@ -14,6 +14,10 @@
  * value by one. The last thread only will call the printShared Variable function, which is displaying the 
  * shared variable value changed by the threads. The size of the loop can be changed in the mutex functions
  * and that will increase of decrease the shared variable value.
+ * Debug function added to the makefile. to use debugger: 
+ * 1. open terminal
+ * 2. navigate to the folder where mutex lab is created
+ * 3. Type in : gdb mutex  - to start the debugger function.
  * The Makefile runs the Doxygen to generate the documentation when the project build  
  *
  */
