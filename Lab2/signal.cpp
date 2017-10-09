@@ -41,6 +41,7 @@ void randezvousA(std::shared_ptr<Semaphore> aThread)
 void randezvousB(std::shared_ptr<Semaphore>bThread)
 {
   std::cout << "Randezvous B1" << '\n';
+  //bThread->aWait();
   bThread->bSignal();
   bThread->aWait();
   std::cout << "Randezvous B2" << '\n';

@@ -1,0 +1,6 @@
+<map id="Semaphore::Semaphore" name="Semaphore::Semaphore">
+<area shape="rect" id="node2" href="$classSemaphore.html#ab4457643a5629d214cd87224706406e7" title="Description of the Shared Method. " alt="" coords="237,5,365,32"/>
+<area shape="rect" id="node3" href="$classSemaphore.html#a72aabebf026e3a8b1f3e4d0fa8ee1eda" title="Description of the void Wait function. " alt="" coords="240,56,363,83"/>
+<area shape="rect" id="node4" href="$classSemaphore.html#a86f92f738b4486439b296d8e235895f2" title="Description of the void Signal function. " alt="" coords="235,107,367,133"/>
+<area shape="rect" id="node5" href="$classSemaphore.html#a0ac15ad31bb88a39655af789234b203d" title="Semaphore::getSharedInt" alt="" coords="216,157,387,184"/>
+</map>
