@@ -22,7 +22,7 @@
 
 /*!
  * \brief Description of the void randezvousA function
- * \param theSemaphore is in the parameter list type of shared_ptr type of Semaphore
+ * \param theSemaphore is in the parameter list is a shared_ptr type of Semaphore
  * \details This function called by the first thread 
  */
 void randezvousA(std::shared_ptr<Semaphore> aThread)
@@ -35,7 +35,7 @@ void randezvousA(std::shared_ptr<Semaphore> aThread)
 
 /*!
  * \brief Description of the void randezvousB function
- * \param bThread is in the parameter list type of shared_ptr type of Semaphore
+ * \param bThread is in the parameter list is a  shared_ptr type of Semaphore
  * \details This function called by the second thread
  */
 void randezvousB(std::shared_ptr<Semaphore>bThread)
