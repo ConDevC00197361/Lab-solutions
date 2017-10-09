@@ -8,7 +8,6 @@
 
 #include <mutex>
 #include <condition_variable>
-#include <chrono>
 #include <iostream> 
 /*!
  * \brief Semaphore.h declaration
