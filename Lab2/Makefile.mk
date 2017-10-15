@@ -5,7 +5,7 @@ CC = g++
 DOXYGEN = doxygen
 PROGRAM = randezvous
 CFLAGS =-std=c++11 -pthread -o $(EXE)
-CFILES = signal.cpp Semaphore.cpp
+CFILES = randezvous.cpp Semaphore.cpp
 HFILES = Semaphore.h
 
 # working simple
