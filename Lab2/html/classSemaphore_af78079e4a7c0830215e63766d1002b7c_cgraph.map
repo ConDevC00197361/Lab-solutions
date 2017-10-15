@@ -1,6 +1,0 @@
-<map id="Semaphore::Semaphore" name="Semaphore::Semaphore">
-<area shape="rect" id="node2" href="$classSemaphore.html#a8b79dd4164e3d18520fdea2e2e7298b4" title="Description of the void aWait function. " alt="" coords="220,5,351,32"/>
-<area shape="rect" id="node3" href="$classSemaphore.html#ad2f2c978eed8783f7cf23925f2238d04" title="Description of the void aSignal function. " alt="" coords="216,56,355,83"/>
-<area shape="rect" id="node4" href="$classSemaphore.html#ad75a2422aa38911edb90f1364a03a761" title="Description of the void bWait function. " alt="" coords="220,107,351,133"/>
-<area shape="rect" id="node5" href="$classSemaphore.html#a4cfbaff2ba1b15ba6ff2f9a74eb2efcc" title="Description of the void Signal function. " alt="" coords="216,157,355,184"/>
-</map>
