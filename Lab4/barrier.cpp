@@ -35,10 +35,10 @@ static int loopCounter;
  */
 void barrier(std::shared_ptr<Semaphore> theSemaphore)
 {
-	//for(int i=0;i<numThreads;i++){
+	for(int i=0;i<numThreads;i++){
 
 
-	  theSemaphore->mutexWait();//************************************ Mutex wait ****************************
+	  theSemaphore->mutexWait();
 	  std::cout << "Mutex wait " <<'\n';
 	  count = count + 1;;
 
@@ -48,15 +48,15 @@ void barrier(std::shared_ptr<Semaphore> theSemaphore)
 	    theSemaphore->barrier2Wait();
 	    std::cout << "Barrier 2 wait"<<'\n';
 
-	    theSemaphore->barrier1Signal();//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-	    std::cout << "Barrier 1 Signal"<<'\n';			//																																  |
-	  }																							//																															    |
-																									//																																  |
-	  std::cout << "count is : " << count <<'\n';//																																	    |
-	  theSemaphore->mutexSignal();//********************************** Mutex Signal *******************************     |
-	  std::cout << "Mutex signal " <<'\n';//																																					  |
-	  std::cout << "Barrier 1 wait " <<'\n';//																																					|
-	  theSemaphore->barrier1Wait();//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Barrier 1 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	    theSemaphore->barrier1Signal();
+	    std::cout << "Barrier 1 Signal"<<'\n';
+	  }
+
+	  std::cout << "count is : " << count <<'\n';
+	  theSemaphore->mutexSignal();
+	  std::cout << "Mutex signal " <<'\n';
+	  std::cout << "Barrier 1 wait " <<'\n';
+	  theSemaphore->barrier1Wait();
 		theSemaphore->barrier1Signal();
 		theSemaphore->barrier1Signal();
 		theSemaphore->barrier1Signal();
@@ -87,7 +87,7 @@ void barrier(std::shared_ptr<Semaphore> theSemaphore)
 	  theSemaphore->barrier2Signal();
 	  std::cout << "Loop restart" <<'\n';
 
-	//}
+	}
 }
 
 
