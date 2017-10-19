@@ -11,14 +11,14 @@
  * \subsection info_sec Lab 3 - Description
  * The main method creates fived threads and four of them will call the mutexOne and the mutexTwo functions.#
  * In those two functions each thread will goes through in the loop ten times and increase the shared variable
- * value by one. The last thread only will call the printShared Variable function, which is displaying the 
+ * value by one. The last thread only will call the printShared Variable function, which is displaying the
  * shared variable value changed by the threads. The size of the loop can be changed in the mutex functions
  * and that will increase of decrease the shared variable value.
- * Debug function added to the makefile. to use debugger: 
+ * Debug function added to the makefile. to use debugger:
  * 1. open terminal
  * 2. navigate to the folder where mutex lab is created
  * 3. Type in : gdb mutex  - to start the debugger function.
- * The Makefile runs the Doxygen to generate the documentation when the project build  
+ * The Makefile runs the Doxygen to generate the documentation when the project build
  *
  */
 
@@ -81,8 +81,8 @@ void mutexTwo(std::shared_ptr<Semaphore> theSemaphore, int *x)
  * \param thread threadThree is the third thread
  * \param thread threadFour is the fourth thread
  * \param thread threadFive is the fifth thread
- * \details Main function of mutex 
- *  The main method creates two threads and call the mutexOne & mutexTwo functions and passing the threads and the 
+ * \details Main function of mutex
+ *  The main method creates two threads and call the mutexOne & mutexTwo functions and passing the threads and the
  *  shared int (count) variable addres to the functions.
  */
 int main(void){
@@ -90,20 +90,21 @@ int main(void){
   int count = 0;
   std::thread threadOne, threadTwo;
 
-   std::shared_ptr<Semaphore> sem( new Semaphore);
+   std::shared_ptr<Semaphore> a( new Semaphore);
+   std::shared_ptr<Semaphore> b( new Semaphore);
    std::cout << "Threads are created" << '\n';
-   threadTwo=std::thread(mutexOne,sem,&count);
-   threadOne=std::thread(mutexTwo,sem,&count);
+   threadTwo=std::thread(mutexOne,a,&count);
+   threadOne=std::thread(mutexTwo,b,&count);
 
-  
-  
-  
+
+
+
   threadOne.join();
   threadTwo.join();
 
   std::cout << "All threads joined" << '\n';
   std::cout << "Count value is : " << count <<'\n';
-  
+
   return 0;
-  
+
 }

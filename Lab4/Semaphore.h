@@ -24,18 +24,20 @@ class Semaphore
 private:
     unsigned int m_uiCountMutex;
     unsigned int m_uiCountBarrier1;
-    unsigned int m_uiCountbarrier2;
+    unsigned int m_uiCountBarrier2;
     std::mutex m_mutexMutex;
     std::mutex m_mutexBarrier1;
     std::mutex m_mutexBarrier2;
     std::condition_variable m_condition;
+    // std::condition_variable b1_condition;
+    // std::condition_variable b2_condition;
 
 public:
     /*!
      * \brief Constructor & Deconstructor
      * The constructor initialise the two member variable (m_uiCountA & m_uiCountB)to Zero;
      */
-    Semaphore(unsigned int mutex=1, unsigned int barrier1 = 0,unsigned int barrier2 = 1 ) : m_uiCountMutex(mutex), m_uiCountBarrier1(barrier1) , m_uiCountbarrier2(barrier2) { };
+    Semaphore(unsigned int mutex=1, unsigned int barrier1 = 0,unsigned int barrier2 = 1 ) : m_uiCountMutex(mutex), m_uiCountBarrier1(barrier1) , m_uiCountBarrier2(barrier2) { };
     void mutexWait();
     void mutexSignal();
 

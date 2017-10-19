@@ -12,8 +12,8 @@
  * The main method creates fived threads and all of them will call the barrier function.
  * Debug function added to the makefile. to use debugger:
  * 1. open terminal
- * 2. navigate to the folder where mutex lab is created
- * 3. Type in : gdb mutex  - to start the debugger function.
+ * 2. navigate to the folder where Lab4 lab is created
+ * 3. Type in : gdb barrierDebug  - to start the debugger function.
  * The Makefile runs the Doxygen to generate the documentation when the project build
  *
  */
@@ -35,47 +35,59 @@ static int loopCounter;
  */
 void barrier(std::shared_ptr<Semaphore> theSemaphore)
 {
-	for(int i=0;i<numThreads;i++){
+	//for(int i=0;i<numThreads;i++){
 
 
-		theSemaphore->mutexWait();
-		std::cout << "Mutex wait on count " <<'\n';
-		count++;
-		theSemaphore->mutexSignal();
-		if(count == numThreads){
-			std::cout << "IF barrier1Signal"<<'\n';
-			theSemaphore->barrier1Signal();
-			theSemaphore->barrier2Wait();
+	  theSemaphore->mutexWait();//************************************ Mutex wait ****************************
+	  std::cout << "Mutex wait " <<'\n';
+	  count = count + 1;;
 
+	  if(count == numThreads){
+	    std::cout << "IF count == numThreads"<<'\n';
 
-		}
-		std::cout << "count is : " << count <<'\n';
+	    theSemaphore->barrier2Wait();
+	    std::cout << "Barrier 2 wait"<<'\n';
 
-
-		theSemaphore->barrier1Wait();
+	    theSemaphore->barrier1Signal();//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+	    std::cout << "Barrier 1 Signal"<<'\n';			//																																  |
+	  }																							//																															    |
+																									//																																  |
+	  std::cout << "count is : " << count <<'\n';//																																	    |
+	  theSemaphore->mutexSignal();//********************************** Mutex Signal *******************************     |
+	  std::cout << "Mutex signal " <<'\n';//																																					  |
+	  std::cout << "Barrier 1 wait " <<'\n';//																																					|
+	  theSemaphore->barrier1Wait();//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< Barrier 1 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 		theSemaphore->barrier1Signal();
+		theSemaphore->barrier1Signal();
+		theSemaphore->barrier1Signal();
+		theSemaphore->barrier1Signal();
+	  std::cout << "Thread left B1 " <<'\n';
 
-		theSemaphore->mutexWait();
-		loopCounter++;
-		//count--;
-		theSemaphore->mutexSignal();
+	  loopCounter++;
+	  std::cout << "Thread " << loopCounter << " Left the first barrier" <<'\n';
 
-		if(loopCounter > 0 && loopCounter % 5 == 0){
-		//if(count == 0){
+	  theSemaphore->mutexWait();
+	  count = count - 1;
+	  std::cout << "count-- " <<'\n';
+	  std::cout << "count is : " << count <<'\n';
 
-			std::cout << "loopCounter : " << loopCounter <<'\n';
-			//std::cout << "count : " << count <<'\n';
+	  if(count == 0){
+
+	    std::cout << "count == 0 " <<'\n';
+	    theSemaphore->barrier1Wait();
 			theSemaphore->barrier2Signal();
 
-			//count = 0;
+	    loopCounter = 0;
+	  }
+		theSemaphore->mutexSignal();
+	  std::cout << "barrier 1 Signal" <<'\n';
+	  theSemaphore->barrier1Signal();
+	  std::cout << "Barrier 2 wait"<<'\n';
+	  theSemaphore->barrier2Wait();//************************************** Barrier 2 ***********************************
+	  theSemaphore->barrier2Signal();
+	  std::cout << "Loop restart" <<'\n';
 
-		}
-		theSemaphore->barrier2Wait();
-		theSemaphore->barrier2Signal();
-
-
-	}
-
+	//}
 }
 
 
@@ -98,18 +110,18 @@ int main(void){
   loopCounter = 0;
   std::thread threadOne, threadTwo, threadThree, threadFour, threadFive;
 
-   std::shared_ptr<Semaphore> a( new Semaphore);
-   std::shared_ptr<Semaphore> b( new Semaphore);
-   std::shared_ptr<Semaphore> c( new Semaphore);
-   std::shared_ptr<Semaphore> d( new Semaphore);
-   std::shared_ptr<Semaphore> e( new Semaphore);
+  std::shared_ptr<Semaphore> a( new Semaphore);
+  std::shared_ptr<Semaphore> b( new Semaphore);
+  std::shared_ptr<Semaphore> c( new Semaphore);
+  std::shared_ptr<Semaphore> d( new Semaphore);
+  std::shared_ptr<Semaphore> e( new Semaphore);
    std::cout << "Threads are created" << '\n';
 
-   threadOne  = std::thread(barrier,a);
-   threadTwo  = std::thread(barrier,b);
-   threadThree= std::thread(barrier,c);
-   threadFour = std::thread(barrier,d);
-   threadFive = std::thread(barrier,e);
+   threadOne   = std::thread(barrier,a);
+   threadTwo   = std::thread(barrier,b);
+   threadThree = std::thread(barrier,c);
+   threadFour  = std::thread(barrier,d);
+   threadFive  = std::thread(barrier,e);
 
   threadOne.join();
   threadTwo.join();
@@ -118,7 +130,7 @@ int main(void){
 	threadFive.join();
 
   std::cout << "All threads joined" << '\n';
-  std::cout << "Count value is : " << count <<'\n';
+  //std::cout << "Count value is : " << count <<'\n';
 
   return 0;
 
