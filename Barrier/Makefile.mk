@@ -12,16 +12,16 @@ HFILES = Semaphore.h
 #	$(CC) $(CFLAGS) *.cpp -o $(EXE)
 #	$(DOXYGEN) Doxyfile
 
-# working more advanced 
+# working more advanced
 all:$(PROGRAM)
 
 #Rule for linking
 $(PROGRAM):$(CFILES) $(HFILES)
 	$(CC) $(CFLAGS) *.cpp -o $(EXE)
-#	$(DOXYGEN) Doxyfile
+	$(DOXYGEN) Doxyfile
 
 debug:
-	g++ -g signal.cpp -o mutexDebug
+	g++ -g signal.cpp -o barrierDebug
 
 clean:
 	rm *.o

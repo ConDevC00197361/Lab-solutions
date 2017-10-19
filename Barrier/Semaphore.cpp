@@ -5,6 +5,7 @@
 */
 
 #include "Semaphore.h"
+#include <iostream>
 
 
 
@@ -23,7 +24,7 @@ void Semaphore::mutexWait()
 
 
 
-  
+
 /*!
  * \brief Description of the void aSignal function
  * \param m_uiCountA Counter to the lock
@@ -43,26 +44,26 @@ void Semaphore::mutexSignal()
  * \param m_mutexB Mutex to the m_uiCountB
  * \details Decrease the m_uiCount if more than Zero
  */
-void Semaphore::barrierWait()
+void Semaphore::barrier1Wait()
 {
-  std::unique_lock< std::mutex > lock(m_mutexBarrier);
-  m_condition.wait(lock,[&]()->bool{ return m_uiCountBarrier>0; });
-      --m_uiCountBarrier;
+  std::unique_lock< std::mutex > lock(m_mutexBarrier1);
+  m_condition.wait(lock,[&]()->bool{ return m_uiCountBarrier1>0; });
+      --m_uiCountBarrier1;
 }
 
 
 
-  
+
 /*!
  * \brief Description of the void Signal function
  * \param m_uiCountB Counter to the lock
  * \param m_mutexB Mutex to the m_uiCountB
  * \details Increase the m_uiCount if more than Zero
  */
-void Semaphore::barrierSignal()
+void Semaphore::barrier1Signal()
 {
-  std::unique_lock< std::mutex > lock(m_mutexBarrier);
-      ++m_uiCountBarrier;
+  std::unique_lock< std::mutex > lock(m_mutexBarrier1);
+      ++m_uiCountBarrier1;
       m_condition.notify_one();
 }
 
@@ -73,27 +74,25 @@ void Semaphore::barrierSignal()
  * \param m_mutexB Mutex to the m_uiCountB
  * \details Decrease the m_uiCount if more than Zero
  */
-void Semaphore::mutexAllWait()
+void Semaphore::barrier2Wait()
 {
-  std::unique_lock< std::mutex > lock(m_mutexAll);
-  m_condition.wait(lock,[&]()->bool{ return m_uiCountAll>0; });
-      --m_uiCountAll;
+  std::unique_lock< std::mutex > lock(m_mutexBarrier2);
+  m_condition.wait(lock,[&]()->bool{ return m_uiCountbarrier2>0; });
+      --m_uiCountbarrier2;
 }
 
 
 
-  
+
 /*!
  * \brief Description of the void Signal function
  * \param m_uiCountB Counter to the lock
  * \param m_mutexB Mutex to the m_uiCountB
  * \details Increase the m_uiCount if more than Zero
  */
-void Semaphore::mutexAllSignal()
+void Semaphore::barrier2Signal()
 {
-  std::unique_lock< std::mutex > lock(m_mutexAll);
-      ++m_uiCountAll;
+  std::unique_lock< std::mutex > lock(m_mutexBarrier2);
+      ++m_uiCountbarrier2;
       m_condition.notify_one();
 }
-
-
