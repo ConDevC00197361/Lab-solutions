@@ -57,10 +57,7 @@ void barrier(std::shared_ptr<Semaphore> theSemaphore)
 	  std::cout << "Mutex signal " <<'\n';
 	  std::cout << "Barrier 1 wait " <<'\n';
 	  theSemaphore->barrier1Wait();
-		theSemaphore->barrier1Signal();
-		theSemaphore->barrier1Signal();
-		theSemaphore->barrier1Signal();
-		theSemaphore->barrier1Signal();
+	  theSemaphore->barrier1Signal();
 	  std::cout << "Thread left B1 " <<'\n';
 
 	  loopCounter++;
@@ -126,8 +123,8 @@ int main(void){
   threadOne.join();
   threadTwo.join();
   threadThree.join();
-	threadFour.join();
-	threadFive.join();
+  threadFour.join();
+  threadFive.join();
 
   std::cout << "All threads joined" << '\n';
   //std::cout << "Count value is : " << count <<'\n';
