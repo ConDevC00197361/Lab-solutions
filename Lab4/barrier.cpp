@@ -83,7 +83,7 @@ void barrier(std::shared_ptr<Semaphore> theSemaphore)
 	  std::cout << "barrier 1 Signal" <<'\n';
 	  theSemaphore->barrier1Signal();
 	  std::cout << "Barrier 2 wait"<<'\n';
-	  theSemaphore->barrier2Wait();//************************************** Barrier 2 ***********************************
+	  theSemaphore->barrier2Wait();
 	  theSemaphore->barrier2Signal();
 	  std::cout << "Loop restart" <<'\n';
 
