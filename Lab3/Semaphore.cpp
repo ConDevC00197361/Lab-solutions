@@ -1,6 +1,9 @@
 /*! \class Semaphore.cpp
     \brief A Semaphore Implementation
-
+    \author Zoltan Fuzesi - C00197361
+    \version 1.0
+    \date 02/10/2017
+    \copyright GNU Public License
    Uses C++11 features such as mutex and condition variables to implement Semaphore
 */
 
@@ -21,7 +24,7 @@ void Semaphore::Wait()
 
 
 
-  
+
 /*!
  * \brief Description of the void Signal function
  * \param m_uiCount Counter to the lock
@@ -33,5 +36,3 @@ void Semaphore::Signal()
       ++m_uiCount;
       m_condition.notify_one();
 }
-
-
