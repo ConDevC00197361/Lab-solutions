@@ -4,7 +4,7 @@ CC = g++ -g
 DOXYGEN = doxygen
 PROGRAM = Producer
 CFLAGS =-std=c++11 -pthread -o$(EXE)
-CFILES = procon.cpp Semaphore.cpp
+CFILES = main.cpp Semaphore.cpp
 HFILES = Semaphore.h
 
 # working simple
