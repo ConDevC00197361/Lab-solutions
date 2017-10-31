@@ -1,25 +1,15 @@
 /*! \class Semaphore.cpp
     \brief A Semaphore Implementation
-
+    \author Zoltan Fuzesi - C00197361
+    \version 1.0
+    \date 02/10/2017
+    \copyright GNU Public License
    Uses C++11 features such as mutex and condition variables to implement Semaphore
 */
 
 #include "Semaphore.h"
 
 
-/*!
- * \brief Description of the Shared Method
- * \param m_lock Mutex lock
- * \details m_lock allows only one thread access the cout line at a time
- */
-
-void Semaphore::count(std::string msg, int id)
- {
- 	 m_lock.lock();
- 	 std::cout <<  msg  << " Shared value is : " << m_sharedInt << std::endl;
- 	 m_sharedInt++;
- 	 m_lock.unlock();
- }
 /*!
  * \brief Description of the void Wait function
  * \param m_uiCount Counter to the lock
@@ -34,7 +24,7 @@ void Semaphore::Wait()
 
 
 
-  
+
 /*!
  * \brief Description of the void Signal function
  * \param m_uiCount Counter to the lock
@@ -45,9 +35,4 @@ void Semaphore::Signal()
   std::unique_lock< std::mutex > lock(m_mutex);
       ++m_uiCount;
       m_condition.notify_one();
-}
-
-int Semaphore::getSharedInt()
-{
-	return m_sharedInt;
 }

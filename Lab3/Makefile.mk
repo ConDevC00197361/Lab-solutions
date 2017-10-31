@@ -4,7 +4,7 @@ CC = g++ -g
 DOXYGEN = doxygen
 PROGRAM = Mutex
 CFLAGS =-std=c++11 -pthread -o$(EXE)
-CFILES = signal.cpp Semaphore.cpp
+CFILES = mutex.cpp Semaphore.cpp
 HFILES = Semaphore.h
 
 # working simple
@@ -20,8 +20,8 @@ $(PROGRAM):$(CFILES) $(HFILES)
 	$(CC) $(CFLAGS) *.cpp -o $(EXE)
 	$(DOXYGEN) Doxyfile
 
-#debug:
-#	g++ -g signal.cpp -o mutexDebug
+debug:
+	g++ -g signal.cpp -o mutexDebug
 
-#clean:
-#	rm *.o
+clean:
+	rm *.o
