@@ -1,0 +1,101 @@
+// procon.cpp --- 
+// 
+// Filename: procon.cpp
+// Description: 
+// Author: Zoltan Fuzesi 
+// Maintainer: 
+// Created: Tue Oct 31 19:16:06 2017 (+0000)
+// Version: 
+// Package-Requires: ()
+// Last-Updated: 
+//           By: 
+//     Update #: 0
+// URL: 
+// Doc URL: 
+// Keywords: 
+// Compatibility: 
+// 
+// 
+
+// Commentary: 
+// 
+// 
+// 
+// 
+
+// Change Log:
+// 
+// 
+// 
+// 
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or (at
+// your option) any later version.
+// 
+// This program is distributed in the hope that it will be useful, but
+// WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
+// 
+// 
+
+// Code:
+
+#include "Semaphore.h"
+#include <iostream>
+#include <thread>
+
+static int count;
+static int numThreads;
+static int loopCounter;
+
+
+/*!
+ * \brief Description of the main function
+ * \param thread threadOne is the first thread
+ * \param thread threadTwo is the second thread
+ * \param thread threadThree is the third thread
+ * \param thread threadFour is the fourth thread
+ * \param thread threadFive is the fifth thread
+ * \details Main function of barrier
+ *  The main method creates five threads and call the barrier functions and passing the threads.
+ */
+int main(void){
+
+  count = 0;
+  numThreads = 5;
+  loopCounter = 0;
+  std::thread threadOne, threadTwo, threadThree, threadFour, threadFive;
+
+  std::shared_ptr<Semaphore> a( new Semaphore);
+  std::shared_ptr<Semaphore> b( new Semaphore);
+  std::shared_ptr<Semaphore> c( new Semaphore);
+  std::shared_ptr<Semaphore> d( new Semaphore);
+  std::shared_ptr<Semaphore> e( new Semaphore);
+   std::cout << "Threads are created" << '\n';
+
+   threadOne   = std::thread(barrier,a);
+   threadTwo   = std::thread(barrier,b);
+   threadThree = std::thread(barrier,c);
+   threadFour  = std::thread(barrier,d);
+   threadFive  = std::thread(barrier,e);
+
+  threadOne.join();
+  threadTwo.join();
+  threadThree.join();
+  threadFour.join();
+  threadFive.join();
+
+  std::cout << "All threads joined" << '\n';
+  //std::cout << "Count value is : " << count <<'\n';
+
+  return 0;
+
+}
+
+// 
+// procon.cpp ends here
