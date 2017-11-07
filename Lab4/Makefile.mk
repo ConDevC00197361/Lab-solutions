@@ -4,8 +4,8 @@ CC = g++ -g
 DOXYGEN = doxygen
 PROGRAM = Barrier
 CFLAGS =-std=c++11 -pthread -o$(EXE)
-CFILES = main.cpp Semaphore.cpp
-HFILES = Semaphore.h
+CFILES = main.cpp Semaphore.cpp Barrier.cpp
+HFILES = Semaphore.h Barrier.h
 
 # working simple
 #all:$(CFILES) $(HFILES)

@@ -1,134 +1,106 @@
-/*!
- * \author Zoltan Fuzesi - C00197361
- * \version 1.0
- * \date 15/10/2017
- *
- * \copyright GNU Public License
- *
- * \mainpage Barrier
- * \section name_sec Software Engineering
- * Barrier, ConDev - Joseph Kehoe
- * \subsection info_sec Barrier - Description
- * The main method creates fived threads and all of them will call the barrier function.
- * Debug function added to the makefile. to use debugger:
- * 1. open terminal
- * 2. navigate to the folder where Lab4 lab is created
- * 3. Type in : gdb barrierDebug  - to start the debugger function.
- * The Makefile runs the Doxygen to generate the documentation when the project build
- *
- */
-
-#include "Semaphore.h"
+///* main.cpp --- 
+// * 
+// * Filename: Barrier.h
+// * Description: 
+// * Author: Zoltan Fuzesi 
+// * Maintainer: 
+//// LICENSE :  GPLv3
+// * Created: Mon Nov  6 09:05:06 2017 (+0000)
+// * Version: 
+// * Package-Requires: ()
+// * Last-Updated: 
+// *           By: 
+// *     Update #: 0
+// * URL: 
+// * Doc URL: 
+// * Keywords: 
+// * Compatibility: 
+// * 
+// */
+//
+///* Commentary: 
+// * 
+// * 
+// * 
+// */
+//
+///* Change Log:
+// * 
+// * 
+// */
+//
+///* This program is free software: you can redistribute it and/or modify
+// * it under the terms of the GNU General Public License as published by
+// * the Free Software Foundation, either version 3 of the License, or (at
+// * your option) any later version.
+// * 
+// * This program is distributed in the hope that it will be useful, but
+// * WITHOUT ANY WARRANTY; without even the implied warranty of
+// * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// * General Public License for more details.
+// * 
+// * You should have received a copy of the GNU General Public License
+// * along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
+// */
+//
+///* Code: */
+#include "Barrier.h"
 #include <iostream>
 #include <thread>
+#include <vector>
+#include <list>
+using namespace std;
 
-static int count;
-static int numThreads;
-static int loopCounter;
+static int NUMBER_OF_LOOP = 5;
 
 /*!
  * \brief Description of the void barrier function
- * \param theSemaphore is in the parameter list type of thread
+ * \param BarrierObj is in the parameter list is type of thread-barrier object
  * \details barrier function.
- *  The function is receiving a shared pointer type of thread .
- *  In the function all thread goes trough in the for loop five times and increasing the shared variable by one.
+ *  The function is receiving a shared pointer type of thread-barrier object .
+ *  The BarrierObj (threads) are calling the barrierOne after the barrierTwo function, what is a
+ *  public method in the barrier class. 
+ *  In the function all thread goes trough in the for loop NUMBER_OF_LOOP times.
  */
-void barrier(std::shared_ptr<Semaphore> theSemaphore)
-{
-	for(int i=0;i<numThreads;i++){
-
-
-	  theSemaphore->mutexWait();
-	  std::cout << "Mutex wait " <<'\n';
-	  count = count + 1;;
-
-	  if(count == numThreads){
-	    std::cout << "IF count == numThreads"<<'\n';
-
-	    theSemaphore->barrier2Wait();
-	    std::cout << "Barrier 2 wait"<<'\n';
-
-	    theSemaphore->barrier1Signal();
-	    std::cout << "Barrier 1 Signal"<<'\n';
-	  }
-
-	  std::cout << "count is : " << count <<'\n';
-	  theSemaphore->mutexSignal();
-	  std::cout << "Mutex signal " <<'\n';
-	  std::cout << "Barrier 1 wait " <<'\n';
-	  theSemaphore->barrier1Wait();
-	  theSemaphore->barrier1Signal();
-	  std::cout << "Thread left B1 " <<'\n';
-
-	  loopCounter++;
-	  std::cout << "Thread " << loopCounter << " Left the first barrier" <<'\n';
-
-	  theSemaphore->mutexWait();
-	  count = count - 1;
-	  std::cout << "count-- " <<'\n';
-	  std::cout << "count is : " << count <<'\n';
-
-	  if(count == 0){
-
-	    std::cout << "count == 0 " <<'\n';
-	    theSemaphore->barrier1Wait();
-			theSemaphore->barrier2Signal();
-
-	    loopCounter = 0;
-	  }
-		theSemaphore->mutexSignal();
-	  std::cout << "barrier 1 Signal" <<'\n';
-	  theSemaphore->barrier1Signal();
-	  std::cout << "Barrier 2 wait"<<'\n';
-	  theSemaphore->barrier2Wait();
-	  theSemaphore->barrier2Signal();
-	  std::cout << "Loop restart" <<'\n';
-
-	}
+void barrier(std::shared_ptr<Barrier> BarrierObj){
+  
+    for(int i=0;i<NUMBER_OF_LOOP;i++){
+        BarrierObj->barrierOne();
+        cout << "Thread left barrier one " << "\n";
+        BarrierObj->barrierTwo();
+        cout << "Thread left barrier two " << "\n";
+        cout << "Restart loop " << i << "\n";
+    }
 }
-
-
-
 
 /*!
- * \brief Description of the main function
- * \param thread threadOne is the first thread
- * \param thread threadTwo is the second thread
- * \param thread threadThree is the third thread
- * \param thread threadFour is the fourth thread
- * \param thread threadFive is the fifth thread
- * \details Main function of barrier
- *  The main method creates five threads and call the barrier functions and passing the threads.
+ * \brief Description of the main method
+ * \param numberOfThreadsInTheBarrier is a number of passing to the barrier class
+ * represents the threads are going through the barriers
+ * \details barrier function.
+ * \param shared_ptr<Barrier>barrierObj is a shared pointer of a Barrier object
+ * \param vector<std::thread>threadVector is a vector to create threads.
+ *  The for loop creates a numberOfThreadsInTheBarrier threads and push into the vector and the
+ * threads are calling the barrier function at creation time
  */
 int main(void){
+    int numberOfThreadsInTheBarrier = 5;
+    
+    std::shared_ptr<Barrier> barrierObj(new Barrier(numberOfThreadsInTheBarrier));
+    std::vector<std::thread> threadVector;
 
-  count = 0;
-  numThreads = 5;
-  loopCounter = 0;
-  std::thread threadOne, threadTwo, threadThree, threadFour, threadFive;
+    for (int i = 0; i < numberOfThreadsInTheBarrier; i++) {
+      cout << "Loop " << i << "\n";
+      threadVector.push_back(std::thread(barrier, barrierObj));
+    }
+    
+    for (auto& th : threadVector) 
+    {
+        th.join();
+    }
 
-  std::shared_ptr<Semaphore> a( new Semaphore);
-  std::shared_ptr<Semaphore> b( new Semaphore);
-  std::shared_ptr<Semaphore> c( new Semaphore);
-  std::shared_ptr<Semaphore> d( new Semaphore);
-  std::shared_ptr<Semaphore> e( new Semaphore);
-   std::cout << "Threads are created" << '\n';
-
-   threadOne   = std::thread(barrier,a);
-   threadTwo   = std::thread(barrier,b);
-   threadThree = std::thread(barrier,c);
-   threadFour  = std::thread(barrier,d);
-   threadFive  = std::thread(barrier,e);
-
-  threadOne.join();
-  threadTwo.join();
-  threadThree.join();
-  threadFour.join();
-  threadFive.join();
-
-  std::cout << "All threads joined" << '\n';
-  //std::cout << "Count value is : " << count <<'\n';
-
-  return 0;
-
+    cout << "All threads are finished!!!" << "\n";
+    return 0;
 }
+
+///* main.cpp ends here */
