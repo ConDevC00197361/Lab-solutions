@@ -37,11 +37,9 @@
  */
 void mutexOne(std::shared_ptr<Semaphore> theSemaphore, int *x)
 {
-
   for (int i = 0; i < 10; i++)
   {
     std::cout << "Mutex one loop " << i << '\n';
-
     theSemaphore->Wait();
     *x = *x + 1;
     std::cout << "Mutex count " << *x << '\n';
