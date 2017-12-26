@@ -46,6 +46,78 @@
 // Code:
 
 
+#include "SafeBuffer.h"
+#include <unistd.h>
 
+void SafeBuffer::show_pid(pid_t l_pid){
+    std::cout<< l_pid << "\n";
+}
+
+ void SafeBuffer::produce(int num,std::thread::id id) {
+/*
+ * Solution 1
+ */
+//             producer->Wait();
+//             pipe[bufferSizeCounter] = num;
+//             std::cout << "Producer produce : " << std::to_string(num) << "\n";
+//             consumer->Signal();
+     /*
+      *Solution 2
+      */
+               producer->Wait();
+               std::cout << "the thread id is " << id << "\n";
+               int sleep = rand()%2 * 1000;
+               usleep(sleep * 1000);
+               if(bufferSizeCounter<maxBuffer-1){
+                   pipeChars[bufferSizeCounter] = chars[num];
+                   std::cout << "Producer produce : " << pipeChars[bufferSizeCounter] << "\n";
+                   ++bufferSizeCounter;
+                   producer->Signal();
+               }
+               else{
+                   pipeChars[bufferSizeCounter] = 'X';
+                   std::cout << "Producer produce last : " << pipeChars[bufferSizeCounter] << "\n";
+                   bufferSizeCounter = 0;
+                   consumer->Signal();
+               }
+                
+               
+               
+    }
+ 
+
+  void SafeBuffer::consume() {
+/*
+ * Solution 1
+ */
+//                consumer->Wait();
+//                int num = pipe[bufferSizeCounter];
+//                
+//                std::cout << "Consumer consumed : " << std::to_string(num) << "\n";
+//                ++bufferSizeCounter;
+//                
+//                if(bufferSizeCounter>=maxBuffer-1){
+//                    bufferSizeCounter=0;
+//                }
+//                producer->Signal();
+      /*
+       * Solution 2
+       */
+                consumer->Wait();
+                int sleep = rand()%2 * 1000;
+                usleep(sleep * 1000);
+                if(pipeChars[bufferSizeCounter]!='X'){//bufferSizeCounter<maxBuffer-1){//change for not equals to character X
+                   std::cout << "Consumer consume : " << pipeChars[bufferSizeCounter] << "\n";
+                   ++bufferSizeCounter;
+                   ++consumeCounter;
+                   consumer->Signal();
+                }else{
+                   std::cout << "Consumer consume : " << pipeChars[bufferSizeCounter] << "\n";
+                   bufferSizeCounter = 0;
+                   ++consumeCounter;
+                   std::cout << "Consumer counter : " << std::to_string(consumeCounter) << "\n";
+                }
+       
+    }
 // 
 // SafeBuffer.cpp ends here

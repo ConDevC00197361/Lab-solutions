@@ -1,9 +1,9 @@
 ### Makefile.mk Documentation
 EXE =Producer
-CC = g++ -g
+CC = g++ -g 
 DOXYGEN = doxygen
 PROGRAM = Producer
-CFLAGS =-std=c++11 -pthread -o$(EXE)
+CFLAGS =-std=c++14 -pthread -o $(EXE) 
 CFILES = main.cpp Semaphore.cpp SafeBuffer.cpp
 HFILES = Semaphore.h SafeBuffer.h
 
@@ -24,4 +24,4 @@ debug:
 	g++ -g signal.cpp -o procon
 
 clean:
-	rm *.o
+	rm -f main.o *.o

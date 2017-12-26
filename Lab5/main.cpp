@@ -44,12 +44,18 @@
 // */
 //
 ///* Code: */
-#include "Barrier.h"
+#include "SafeBuffer.h"
 #include <iostream>
 #include <thread>
 #include <vector>
 #include <list>
+#include <unistd.h>
+
+
+
+
 using namespace std;
+
 
 static int NUMBER_OF_LOOP = 5;
 
@@ -62,15 +68,20 @@ static int NUMBER_OF_LOOP = 5;
  *  public method in the barrier class. 
  *  In the function all thread goes trough in the for loop NUMBER_OF_LOOP times.
  */
-void barrier(std::shared_ptr<Barrier> BarrierObj){
+void produce(std::shared_ptr<SafeBuffer> Buffer){
   
-    for(int i=0;i<NUMBER_OF_LOOP;i++){
-        BarrierObj->barrierOne();
-        cout << "Thread left barrier one " << "\n";
-        BarrierObj->barrierTwo();
-        cout << "Thread left barrier two " << "\n";
-        cout << "Restart loop " << i << "\n";
-    }
+    //int num = rand()%21+10;
+    int num = rand()%26;
+    //std::cout << "The number is " << std::to_string(num) << "\n";
+
+    
+    Buffer->produce(num, std::this_thread::get_id());
+}
+
+void consume(std::shared_ptr<SafeBuffer> Buffer){
+  
+ 
+    Buffer->consume();
 }
 
 /*!
@@ -84,20 +95,39 @@ void barrier(std::shared_ptr<Barrier> BarrierObj){
  * threads are calling the barrier function at creation time
  */
 int main(void){
-    int numberOfThreadsInTheBarrier = 5;
+    pid_t ppid;
     
-    std::shared_ptr<Barrier> barrierObj(new Barrier(numberOfThreadsInTheBarrier));
+    SafeBuffer sb;
+    
+    
+    
+    ppid = getppid();
+    sb.show_pid(ppid);
+    cout << "The pid is " << ppid <<"\n";
+    
+    int bufferSize = 0;
+    int numberOfThreadsInThebuffer = 39;
+    
+    std::shared_ptr<SafeBuffer> bufferObj(new SafeBuffer(bufferSize,numberOfThreadsInThebuffer));
     std::vector<std::thread> threadVector;
 
-    for (int i = 0; i < numberOfThreadsInTheBarrier; i++) {
-      cout << "Loop " << i << "\n";
-      threadVector.push_back(std::thread(barrier, barrierObj));
+    for (int i = 0; i < numberOfThreadsInThebuffer; i++) {
+
+      threadVector.push_back(std::thread(produce, bufferObj));
+    }
+    
+
+    for (int i = 0; i < numberOfThreadsInThebuffer; i++) {
+
+      threadVector.push_back(std::thread(consume, bufferObj));
     }
     
     for (auto& th : threadVector) 
     {
         th.join();
     }
+    
+    
 
     cout << "All threads are finished!!!" << "\n";
     return 0;
