@@ -47,7 +47,6 @@
 
 #include <iostream>
 #include "Semaphore.h"
-#include <memory>
 
 /*!
  * \brief Description of the void barrier.h class
