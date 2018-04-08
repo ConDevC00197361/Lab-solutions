@@ -1,27 +1,22 @@
 ### Makefile.mk Documentation
 EXE = mutex
-CC = g++ -g
+CC = g++
 DOXYGEN = doxygen
 PROGRAM = Mutex
 CFLAGS =-std=c++11 -pthread -o$(EXE)
 CFILES = mutex.cpp Semaphore.cpp
 HFILES = Semaphore.h
 
-# working simple
-#all:$(CFILES) $(HFILES)
-#	$(CC) $(CFLAGS) *.cpp -o $(EXE)
-#	$(DOXYGEN) Doxyfile
-
 # working more advanced 
-all:$(PROGRAM)
+ALL:$(PROGRAM)
 
 #Rule for linking
 $(PROGRAM):$(CFILES) $(HFILES)
-	$(CC) $(CFLAGS) *.cpp -o $(EXE)
+	$(CC) $(CFLAGS) *.cpp -o $(EXE) $(DEBUGFLAGS)
 	$(DOXYGEN) Doxyfile
 
-debug:
-	g++ -g signal.cpp -o mutexDebug
+DEBUG: DEBUGFLAGS = -g -O0
+DEBUG: ALL
 
-clean:
+CLEAN:
 	rm *.o

@@ -1,27 +1,25 @@
 ### Makefile.mk Documentation
-EXE =Barrier
-CC = g++ -g
+
+EXE = randezvous
+CC = g++
 DOXYGEN = doxygen
-PROGRAM = Barrier
-CFLAGS =-std=c++11 -pthread -o$(EXE)
-CFILES = main.cpp Semaphore.cpp Barrier.cpp
-HFILES = Semaphore.h Barrier.h
+PROGRAM = randezvous
+CFLAGS =-std=c++11 -pthread -o $(EXE)
+CFILES = randezvous.cpp Semaphore.cpp
+HFILES = Semaphore.h
 
 # working simple
 #all:$(CFILES) $(HFILES)
 #	$(CC) $(CFLAGS) *.cpp -o $(EXE)
 #	$(DOXYGEN) Doxyfile
 
-# working more advanced
-all:$(PROGRAM)
+# working more advanced 
+ALL:$(PROGRAM)
 
 #Rule for linking
 $(PROGRAM):$(CFILES) $(HFILES)
 	$(CC) $(CFLAGS) *.cpp -o $(EXE)
 	$(DOXYGEN) Doxyfile
 
-debug:
-	g++ -g signal.cpp -o barrierDebug
-
-clean:
+CLEAN:
 	rm *.o

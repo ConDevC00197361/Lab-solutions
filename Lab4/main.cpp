@@ -1,49 +1,22 @@
-///* main.cpp --- 
-// * 
-// * Filename: Barrier.h
-// * Description: 
-// * Author: Zoltan Fuzesi 
-// * Maintainer: 
-//// LICENSE :  GPLv3
-// * Created: Mon Nov  6 09:05:06 2017 (+0000)
-// * Version: 
-// * Package-Requires: ()
-// * Last-Updated: 
-// *           By: 
-// *     Update #: 0
-// * URL: 
-// * Doc URL: 
-// * Keywords: 
-// * Compatibility: 
-// * 
-// */
-//
-///* Commentary: 
-// * 
-// * 
-// * 
-// */
-//
-///* Change Log:
-// * 
-// * 
-// */
-//
-///* This program is free software: you can redistribute it and/or modify
-// * it under the terms of the GNU General Public License as published by
-// * the Free Software Foundation, either version 3 of the License, or (at
-// * your option) any later version.
-// * 
-// * This program is distributed in the hope that it will be useful, but
-// * WITHOUT ANY WARRANTY; without even the implied warranty of
-// * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-// * General Public License for more details.
-// * 
-// * You should have received a copy of the GNU General Public License
-// * along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
-// */
-//
-///* Code: */
+/*!
+ * \author Zoltan Fuzesi - C00197361
+ * \version 1.0
+ * \date 02/10/2017
+ *
+ * \copyright GNU Public License
+ *
+ * \mainpage Lab 4
+ * \section name_sec Software Engineering
+ * Lab 4, ConDev - Joseph Kehoe
+ * \subsection info_sec Lab 4 - Description
+ * Reusable Barrier Class Create a reusable barrier that employs the Semaphore Class. 
+ * The build function generating the Doxyfile. 
+ * The make rule include a “clean” rule that deletes all .o files from the project and a debug option 
+ * that allows use of the gdb debugger. 
+ * The -Wall flag added to the list of compiler flags sued by the Debug rule.
+ */
+
+
 #include "Barrier.h"
 #include <iostream>
 #include <thread>

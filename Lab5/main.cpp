@@ -1,49 +1,24 @@
-///* main.cpp --- 
-// * 
-// * Filename: Barrier.h
-// * Description: 
-// * Author: Zoltan Fuzesi 
-// * Maintainer: 
-//// LICENSE :  GPLv3
-// * Created: Mon Nov  6 09:05:06 2017 (+0000)
-// * Version: 
-// * Package-Requires: ()
-// * Last-Updated: 
-// *           By: 
-// *     Update #: 0
-// * URL: 
-// * Doc URL: 
-// * Keywords: 
-// * Compatibility: 
-// * 
-// */
-//
-///* Commentary: 
-// * 
-// * 
-// * 
-// */
-//
-///* Change Log:
-// * 
-// * 
-// */
-//
-///* This program is free software: you can redistribute it and/or modify
-// * it under the terms of the GNU General Public License as published by
-// * the Free Software Foundation, either version 3 of the License, or (at
-// * your option) any later version.
-// * 
-// * This program is distributed in the hope that it will be useful, but
-// * WITHOUT ANY WARRANTY; without even the implied warranty of
-// * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-// * General Public License for more details.
-// * 
-// * You should have received a copy of the GNU General Public License
-// * along with GNU Emacs.  If not, see <http://www.gnu.org/licenses/>.
-// */
-//
-///* Code: */
+/*!
+ * \author Zoltan Fuzesi - C00197361
+ * \version 1.0
+ * \date 02/10/2017
+ *
+ * \copyright GNU Public License
+ *
+ * \mainpage Lab 5
+ * \section name_sec Software Engineering
+ * Lab 5, ConDev - Joseph Kehoe
+ * \subsection info_sec Lab 5 - Description
+ * A producer and a consumer.
+ * The producer generates random characters from 097 to 122 ‘a’ to ‘z’ at random intervals (between 0 and 1 second in length). <br>
+ * It adds these to a thread safe buffer that has a finite holding capacity of N characters.<br>
+ * It generates a preset number of characters (determined at runtime) and when it has finished it add an ‘X’ <br>
+ * character to the buffer and exits.The consumer takes these letters from the buffer at random time intervals <br>
+ * (between 0 and 1 second in length) and records how many of each letter it consumes.<br>
+ * Once it sees an ‘X’ in the buffer it adds its character count to a central buffer and exits.
+ *
+ */
+
 #include "SafeBuffer.h"
 #include <iostream>
 #include <thread>

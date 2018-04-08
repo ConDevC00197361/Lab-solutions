@@ -7,21 +7,16 @@ CFLAGS =-std=c++14 -pthread -o $(EXE)
 CFILES = main.cpp Semaphore.cpp SafeBuffer.cpp
 HFILES = Semaphore.h SafeBuffer.h
 
-# working simple
-#all:$(CFILES) $(HFILES)
-#	$(CC) $(CFLAGS) *.cpp -o $(EXE)
-#	$(DOXYGEN) Doxyfile
-
 # working more advanced
-all:$(PROGRAM)
+ALL:$(PROGRAM)
 
 #Rule for linking
 $(PROGRAM):$(CFILES) $(HFILES)
-	$(CC) $(CFLAGS) *.cpp -o $(EXE)
+	$(CC) $(CFLAGS) *.cpp -o $(EXE) $(DEBUGFLAGS)
 	$(DOXYGEN) Doxyfile
 
-debug:
-	g++ -g signal.cpp -o procon
+DEBUG: DEBUGFLAGS = -g -O0
+DEBUG: ALL
 
-clean:
-	rm -f main.o *.o
+CLEAN:
+	rm *.o
